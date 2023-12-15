@@ -23,5 +23,5 @@ urlpatterns = [
     path("", include("oauth2_provider.urls", namespace="oauth2_provider")),
     path("accounts/", include("django.contrib.auth.urls")),
     #
-    path("v1.0/", include("core.urls")),
+    path("v1.0/", include("devices.urls")),
 ]

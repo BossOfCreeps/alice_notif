@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "oauth2_provider",
     "sslserver",
     #
-    "core.apps.CoreConfig",
+    "devices.apps.DevicesConfig",
 ]
 
 MIDDLEWARE = [
