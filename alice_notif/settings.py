@@ -42,13 +42,18 @@ INSTALLED_APPS = [
     #
     "oauth2_provider",
     "sslserver",
+    "rest_framework",
+    "corsheaders",
     #
-    "core.apps.CoreConfig",
+    "devices.apps.DevicesConfig",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    #
+    "corsheaders.middleware.CorsMiddleware",
+    #
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -112,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-ru"
 
 TIME_ZONE = "UTC"
 
@@ -136,6 +141,8 @@ REST_FRAMEWORK = {
         "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
     ],
 }
+
+CORS_ALLOW_ALL = True
 
 OAUTH2_PROVIDER = {
     "PKCE_REQUIRED": False,
