@@ -1,4 +1,8 @@
-from django.contrib import admin
 from django.urls import path
 
-urlpatterns = []
+from devices.views import StatusView, DeviceListView
+
+urlpatterns = [
+    path("", StatusView.as_view(), name="status"),
+    path("user/devices", DeviceListView.as_view(), name="devices"),
+]
